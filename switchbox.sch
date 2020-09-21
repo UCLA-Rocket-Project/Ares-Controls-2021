@@ -1,0 +1,111 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR?
+U 1 1 5F5A3B69
+P 3600 3100
+F 0 "#PWR?" H 3600 2850 50  0001 C CNN
+F 1 "GND" H 3605 2927 50  0000 C CNN
+F 2 "" H 3600 3100 50  0001 C CNN
+F 3 "" H 3600 3100 50  0001 C CNN
+	1    3600 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F5A3B6F
+P 1100 2700
+F 0 "#PWR?" H 1100 2450 50  0001 C CNN
+F 1 "GND" H 1105 2527 50  0000 C CNN
+F 2 "" H 1100 2700 50  0001 C CNN
+F 3 "" H 1100 2700 50  0001 C CNN
+	1    1100 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5F5A3B75
+P 1100 2600
+F 0 "#PWR?" H 1100 2450 50  0001 C CNN
+F 1 "+5V" H 1115 2773 50  0000 C CNN
+F 2 "" H 1100 2600 50  0001 C CNN
+F 3 "" H 1100 2600 50  0001 C CNN
+	1    1100 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 2600 1700 2600
+Wire Wire Line
+	1700 2700 1100 2700
+$Comp
+L power:+5V #PWR?
+U 1 1 5F5A3B7D
+P 4000 2800
+F 0 "#PWR?" H 4000 2650 50  0001 C CNN
+F 1 "+5V" H 4015 2973 50  0000 C CNN
+F 2 "" H 4000 2800 50  0001 C CNN
+F 3 "" H 4000 2800 50  0001 C CNN
+	1    4000 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2800 3900 2800
+$Comp
+L Device:R_US R?
+U 1 1 5F5A3B84
+P 3750 2800
+F 0 "R?" V 3545 2800 50  0000 C CNN
+F 1 "10k" V 3636 2800 50  0000 C CNN
+F 2 "" V 3790 2790 50  0001 C CNN
+F 3 "~" H 3750 2800 50  0001 C CNN
+	1    3750 2800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3600 3000 3600 2900
+Wire Wire Line
+	3600 3100 3600 3000
+Connection ~ 3600 3000
+Connection ~ 3600 3100
+$Comp
+L 2020-09-01_02-26-45:MCP23017-E_SP U?
+U 1 1 5F5A3B8E
+P 1700 1800
+F 0 "U?" H 2650 2187 60  0000 C CNN
+F 1 "MCP23017-E_SP" H 2650 2081 60  0000 C CNN
+F 2 "SPDIP28_300MC_MCH" H 2650 2040 60  0001 C CNN
+F 3 "" H 1700 1800 60  0000 C CNN
+	1    1700 1800
+	1    0    0    -1  
+$EndComp
+Text GLabel 1700 3000 0    50   Input ~ 0
+SDA1
+$Comp
+L Switch:SW_DIP_x08 SW?
+U 1 1 5F5A3B96
+P 1300 1750
+AR Path="/5F5A3B96" Ref="SW?"  Part="1" 
+AR Path="/5F57B52C/5F5A3B96" Ref="SW?"  Part="1" 
+F 0 "SW?" H 1300 2417 50  0000 C CNN
+F 1 "SW_DIP_x08" H 1300 2326 50  0000 C CNN
+F 2 "" H 1300 1750 50  0001 C CNN
+F 3 "~" H 1300 1750 50  0001 C CNN
+	1    1300 1750
+	1    0    0    -1  
+$EndComp
+Text HLabel 1700 2900 0    50   Input ~ 0
+SCL1
+$EndSCHEMATC
