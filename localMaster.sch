@@ -251,7 +251,7 @@ F 3 "~" H 3900 3550 50  0001 C CNN
 	1    3900 3550
 	-1   0    0    1   
 $EndComp
-Text Notes 5150 4500 0    50   ~ 0
+Text Notes 5000 4400 0    50   ~ 0
 Never let SLO pin on LTC4331 float. 
 Text Notes 4800 2550 0    50   ~ 0
 Keep C1 \nwithin 7mm \nof Vcc pin
@@ -510,4 +510,22 @@ Wire Wire Line
 Connection ~ 2850 2300
 Text HLabel 2900 2300 2    50   Input ~ 0
 Vcc
+Wire Wire Line
+	6700 4000 6700 4100
+$Comp
+L power:GND #PWR?
+U 1 1 5F7519CB
+P 6700 4100
+AR Path="/5F7519CB" Ref="#PWR?"  Part="1" 
+AR Path="/5F6BFC31/5F7519CB" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6700 3850 50  0001 C CNN
+F 1 "GND" V 6705 3972 50  0000 R CNN
+F 2 "" H 6700 4100 50  0001 C CNN
+F 3 "" H 6700 4100 50  0001 C CNN
+	1    6700 4100
+	1    0    0    -1  
+$EndComp
+Connection ~ 6700 4100
+Text Notes 6850 4350 0    50   ~ 0
+A1 and A2 set the I2C address. \nBoth are set to low so current \naddress is 3Eh
 $EndSCHEMATC
