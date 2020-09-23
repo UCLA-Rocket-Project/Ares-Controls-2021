@@ -48,17 +48,6 @@ Text GLabel 4550 2700 0    50   Input ~ 0
 SDA1
 Text GLabel 3250 2600 2    50   Input ~ 0
 SDA1
-$Comp
-L 2020-09-01_04-44-37:LTC4331IUFD-PBF U1
-U 1 1 5F4E03B4
-P 5100 2000
-F 0 "U1" H 6100 2387 60  0000 C CNN
-F 1 "LTC4331IUFD-PBF" H 6100 2281 60  0000 C CNN
-F 2 "QFN_20_ADI" H 6100 2240 60  0001 C CNN
-F 3 "" H 5100 2000 60  0000 C CNN
-	1    5100 2000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5100 2200 5100 2100
 Text GLabel 2250 2900 0    50   Input ~ 0
@@ -170,13 +159,7 @@ F 3 "" H 5000 3200 50  0001 C CNN
 	1    5000 3200
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	4600 2700 5100 2700
-Wire Wire Line
-	4250 2600 5100 2600
 Connection ~ 5000 2900
-Wire Wire Line
-	5000 2900 5100 2900
 $Comp
 L power:+5V #PWR?
 U 1 1 5F565FAF
@@ -216,19 +199,8 @@ Connection ~ 4600 2700
 Wire Wire Line
 	4250 2600 4200 2600
 Connection ~ 4250 2600
-$Comp
-L power:GND #PWR?
-U 1 1 5F5786CF
-P 7100 2700
-F 0 "#PWR?" H 7100 2450 50  0001 C CNN
-F 1 "GND" V 7105 2572 50  0000 R CNN
-F 2 "" H 7100 2700 50  0001 C CNN
-F 3 "" H 7100 2700 50  0001 C CNN
-	1    7100 2700
-	0    -1   -1   0   
-$EndComp
-Text Notes 9050 1100 2    50   ~ 0
-SPEED1 is set to low and SPEED2 to float in order to set the link rate at 125kHz\nwith a max cable length of 600 meters. Other combinations of how these two \npins are set will allow different speeds and different max extension lengths. \nThis designated "speed index" must be set the same on both sides.
+Text Notes 5850 950  0    50   ~ 0
+SPEED1 and SPEED2 are set to high in order to set the link rate at 12.5kHz\nwith a max cable length of 1200+ meters. Other combinations of how these two \npins are set will allow different speeds and different max extension lengths. \nThis designated "speed index" must be set the same on both local and remote LTC4331s
 $Comp
 L 2020-09-01_04-44-37:LTC4331IUFD-PBF U3
 U 1 1 5F57CDB1
@@ -267,19 +239,16 @@ Wire Wire Line
 $Comp
 L power:+5V #PWR?
 U 1 1 5F57F945
-P 7100 2400
-F 0 "#PWR?" H 7100 2250 50  0001 C CNN
-F 1 "+5V" V 7115 2528 50  0000 L CNN
-F 2 "" H 7100 2400 50  0001 C CNN
-F 3 "" H 7100 2400 50  0001 C CNN
-	1    7100 2400
-	0    1    1    0   
+P 7800 2600
+F 0 "#PWR?" H 7800 2450 50  0001 C CNN
+F 1 "+5V" V 7815 2728 50  0000 L CNN
+F 2 "" H 7800 2600 50  0001 C CNN
+F 3 "" H 7800 2600 50  0001 C CNN
+	1    7800 2600
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4500 2100 5100 2100
-Wire Wire Line
 	4500 1700 4500 1800
-Connection ~ 5100 2100
 $Comp
 L power:+5V #PWR?
 U 1 1 5F588292
@@ -311,24 +280,16 @@ Wire Wire Line
 $Comp
 L power:GND #PWR?
 U 1 1 5F5892C8
-P 7100 2500
-F 0 "#PWR?" H 7100 2250 50  0001 C CNN
-F 1 "GND" V 7105 2372 50  0000 R CNN
-F 2 "" H 7100 2500 50  0001 C CNN
-F 3 "" H 7100 2500 50  0001 C CNN
-	1    7100 2500
-	0    -1   -1   0   
+P 7600 2400
+F 0 "#PWR?" H 7600 2150 50  0001 C CNN
+F 1 "GND" V 7605 2272 50  0000 R CNN
+F 2 "" H 7600 2400 50  0001 C CNN
+F 3 "" H 7600 2400 50  0001 C CNN
+	1    7600 2400
+	1    0    0    -1  
 $EndComp
 Text Notes 5100 1100 2    50   ~ 0
 Bypass Capacitors
-Text GLabel 8000 2200 2    50   Input ~ 0
-B
-Text GLabel 8250 2500 2    50   Input ~ 0
-A
-Wire Wire Line
-	7100 2200 7700 2200
-Text Notes 8200 2350 0    50   ~ 0
-A, B, and Vcc are \ncarried by a \nCAT5 cable 100m
 Text GLabel 9800 5400 2    50   Input ~ 0
 A
 Text GLabel 9800 5300 2    50   Input ~ 0
@@ -413,18 +374,6 @@ F 3 "~" H 8800 5800 50  0001 C CNN
 $EndComp
 $Comp
 L power:Earth #PWR?
-U 1 1 5F5DF504
-P 4400 6100
-F 0 "#PWR?" H 4400 5850 50  0001 C CNN
-F 1 "Earth" H 4400 5950 50  0001 C CNN
-F 2 "" H 4400 6100 50  0001 C CNN
-F 3 "~" H 4400 6100 50  0001 C CNN
-	1    4400 6100
-	1    0    0    -1  
-$EndComp
-Connection ~ 4400 6100
-$Comp
-L power:Earth #PWR?
 U 1 1 5F5E5B08
 P 1900 5700
 F 0 "#PWR?" H 1900 5450 50  0001 C CNN
@@ -456,8 +405,6 @@ F 3 "~" H 4500 2400 50  0001 C CNN
 	1    4500 2400
 	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	4650 2400 5100 2400
 $Comp
 L Device:R_US R9
 U 1 1 5F5F838D
@@ -493,76 +440,6 @@ F 3 "~" H 6200 5500 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6350 5500 6800 5500
-$Comp
-L Device:R_US R8
-U 1 1 5F5F92E4
-P 7700 2650
-F 0 "R8" H 7632 2604 50  0000 R CNN
-F 1 "620" H 7632 2695 50  0000 R CNN
-F 2 "" V 7740 2640 50  0001 C CNN
-F 3 "~" H 7700 2650 50  0001 C CNN
-	1    7700 2650
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 5F5F92EA
-P 7700 2800
-F 0 "#PWR?" H 7700 2650 50  0001 C CNN
-F 1 "+5V" V 7715 2928 50  0000 L CNN
-F 2 "" H 7700 2800 50  0001 C CNN
-F 3 "" H 7700 2800 50  0001 C CNN
-	1    7700 2800
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	8250 2500 7850 2500
-Wire Wire Line
-	7550 2300 7100 2300
-$Comp
-L Device:R_US R7
-U 1 1 5F5FE91B
-P 7850 2350
-F 0 "R7" H 7782 2304 50  0000 R CNN
-F 1 "110" H 7782 2395 50  0000 R CNN
-F 2 "" V 7890 2340 50  0001 C CNN
-F 3 "~" H 7850 2350 50  0001 C CNN
-	1    7850 2350
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7550 2500 7550 2300
-Connection ~ 7850 2500
-$Comp
-L Device:R_US R6
-U 1 1 5F60224B
-P 7700 2050
-F 0 "R6" H 7632 2004 50  0000 R CNN
-F 1 "620" H 7632 2095 50  0000 R CNN
-F 2 "" V 7740 2040 50  0001 C CNN
-F 3 "~" H 7700 2050 50  0001 C CNN
-	1    7700 2050
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F602751
-P 7700 1900
-F 0 "#PWR?" H 7700 1650 50  0001 C CNN
-F 1 "GND" H 7705 1727 50  0000 C CNN
-F 2 "" H 7700 1900 50  0001 C CNN
-F 3 "" H 7700 1900 50  0001 C CNN
-	1    7700 1900
-	-1   0    0    1   
-$EndComp
-Connection ~ 7700 2500
-Wire Wire Line
-	7700 2500 7550 2500
-Wire Wire Line
-	7700 2500 7850 2500
-Connection ~ 7700 2200
-Wire Wire Line
-	7700 2200 7850 2200
 Text GLabel 5900 5700 0    50   Input ~ 0
 SCL2
 Text GLabel 6250 5800 0    50   Input ~ 0
@@ -728,16 +605,6 @@ Wire Wire Line
 	6400 5200 6400 4950
 Connection ~ 6800 5200
 Connection ~ 6400 4950
-Connection ~ 7850 2200
-Wire Wire Line
-	7850 2200 8000 2200
-$Sheet
-S 850  1100 600  800 
-U 5F57B52C
-F0 "SWITCHBOX" 50
-F1 "switchbox.sch" 50
-F2 "SCL1" I R 1450 1300 50 
-$EndSheet
 $Comp
 L Connector:Conn_01x08_Male J?
 U 1 1 5F5AAA5B
@@ -784,4 +651,165 @@ F 3 "~" V 10050 4775 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4850 5800 4400 5800
+$Sheet
+S 850  1100 600  800 
+U 5F57B52C
+F0 "SWITCHBOX" 50
+F1 "switchbox.sch" 50
+F2 "SCL1" I R 1450 1400 50 
+F3 "SDA1" I R 1450 1300 50 
+$EndSheet
+$Comp
+L power:+5V #PWR?
+U 1 1 5F763441
+P 4550 6100
+F 0 "#PWR?" H 4550 5950 50  0001 C CNN
+F 1 "+5V" H 4565 6273 50  0000 C CNN
+F 2 "" H 4550 6100 50  0001 C CNN
+F 3 "" H 4550 6100 50  0001 C CNN
+	1    4550 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 6100 4550 6100
+Connection ~ 4400 6100
+$Comp
+L power:+5V #PWR?
+U 1 1 5F76A721
+P 7450 2300
+F 0 "#PWR?" H 7450 2150 50  0001 C CNN
+F 1 "+5V" V 7465 2428 50  0000 L CNN
+F 2 "" H 7450 2300 50  0001 C CNN
+F 3 "" H 7450 2300 50  0001 C CNN
+	1    7450 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 1650 8600 1650
+Connection ~ 8450 1650
+Wire Wire Line
+	8300 1650 8450 1650
+Connection ~ 8300 1650
+Wire Wire Line
+	8300 1950 8450 1950
+Connection ~ 8300 1950
+$Comp
+L power:GND #PWR?
+U 1 1 5F602751
+P 8300 1350
+F 0 "#PWR?" H 8300 1100 50  0001 C CNN
+F 1 "GND" H 8305 1177 50  0000 C CNN
+F 2 "" H 8300 1350 50  0001 C CNN
+F 3 "" H 8300 1350 50  0001 C CNN
+	1    8300 1350
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R6
+U 1 1 5F60224B
+P 8300 1500
+F 0 "R6" H 8232 1454 50  0000 R CNN
+F 1 "620" H 8232 1545 50  0000 R CNN
+F 2 "" V 8340 1490 50  0001 C CNN
+F 3 "~" H 8300 1500 50  0001 C CNN
+	1    8300 1500
+	-1   0    0    1   
+$EndComp
+Connection ~ 8450 1950
+$Comp
+L Device:R_US R7
+U 1 1 5F5FE91B
+P 8450 1800
+F 0 "R7" H 8382 1754 50  0000 R CNN
+F 1 "110" H 8382 1845 50  0000 R CNN
+F 2 "" V 8490 1790 50  0001 C CNN
+F 3 "~" H 8450 1800 50  0001 C CNN
+	1    8450 1800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8850 1950 8450 1950
+$Comp
+L power:+5V #PWR?
+U 1 1 5F5F92EA
+P 8300 2250
+F 0 "#PWR?" H 8300 2100 50  0001 C CNN
+F 1 "+5V" V 8315 2378 50  0000 L CNN
+F 2 "" H 8300 2250 50  0001 C CNN
+F 3 "" H 8300 2250 50  0001 C CNN
+	1    8300 2250
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_US R8
+U 1 1 5F5F92E4
+P 8300 2100
+F 0 "R8" H 8232 2054 50  0000 R CNN
+F 1 "620" H 8232 2145 50  0000 R CNN
+F 2 "" V 8340 2090 50  0001 C CNN
+F 3 "~" H 8300 2100 50  0001 C CNN
+	1    8300 2100
+	-1   0    0    1   
+$EndComp
+Text Notes 8800 1800 0    50   ~ 0
+A, B, and Vcc are \ncarried by a \nCAT5 cable 100m
+Text GLabel 8850 1950 2    50   Input ~ 0
+A
+Text GLabel 8600 1650 2    50   Input ~ 0
+B
+Wire Wire Line
+	5000 2900 5100 2900
+Wire Wire Line
+	4600 2700 5100 2700
+Wire Wire Line
+	4250 2600 5100 2600
+Wire Wire Line
+	4650 2400 5100 2400
+Wire Wire Line
+	4500 2100 5100 2100
+Wire Wire Line
+	7250 2200 7250 1650
+Wire Wire Line
+	7250 1650 8300 1650
+Wire Wire Line
+	7300 2300 7300 1950
+Wire Wire Line
+	7300 1950 8300 1950
+Wire Wire Line
+	7450 2400 7450 2300
+Connection ~ 5100 2100
+Wire Wire Line
+	7100 2400 7450 2400
+Wire Wire Line
+	7100 2300 7300 2300
+Wire Wire Line
+	7100 2200 7250 2200
+$Comp
+L 2020-09-01_04-44-37:LTC4331IUFD-PBF U1
+U 1 1 5F4E03B4
+P 5100 2000
+F 0 "U1" H 6100 2387 60  0000 C CNN
+F 1 "LTC4331IUFD-PBF" H 6100 2281 60  0000 C CNN
+F 2 "QFN_20_ADI" H 6100 2240 60  0001 C CNN
+F 3 "" H 5100 2000 60  0000 C CNN
+	1    5100 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 2500 7500 2500
+Wire Wire Line
+	7500 2500 7500 2400
+Wire Wire Line
+	7500 2400 7600 2400
+Wire Wire Line
+	7100 2600 7100 2700
+Wire Wire Line
+	7100 2700 7800 2700
+Wire Wire Line
+	7800 2700 7800 2600
+Connection ~ 7100 2700
+Text GLabel 1450 1400 2    50   Input ~ 0
+SCL1
+Text GLabel 1450 1300 2    50   Input ~ 0
+SDA1
 $EndSCHEMATC
