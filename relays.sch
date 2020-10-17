@@ -107,17 +107,6 @@ F 3 "~" H 4650 2500 50  0001 C CNN
 	1    4650 2500
 	1    0    0    -1  
 $EndComp
-$Comp
-L Connector:Conn_01x08_Male J4
-U 1 1 5F7DB213
-P 7200 2500
-F 0 "J4" H 7308 2981 50  0000 C CNN
-F 1 "Conn_01x08_Male" H 7308 2890 50  0000 C CNN
-F 2 "" H 7200 2500 50  0001 C CNN
-F 3 "~" H 7200 2500 50  0001 C CNN
-	1    7200 2500
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	4850 2200 5000 2200
 Wire Wire Line
@@ -135,8 +124,6 @@ Wire Wire Line
 Wire Wire Line
 	4850 2900 5000 2900
 Wire Wire Line
-	6900 2200 7000 2200
-Wire Wire Line
 	7000 2300 6900 2300
 Wire Wire Line
 	6900 2400 7000 2400
@@ -150,8 +137,6 @@ Wire Wire Line
 	6900 2800 7000 2800
 Wire Wire Line
 	7000 2900 6900 2900
-Text Notes 6900 1650 0    50   ~ 0
-Each CONN_MALE will be jumped\nto an active-low magnetic relay
 Wire Wire Line
 	6900 3400 6900 3300
 Wire Wire Line
@@ -171,4 +156,85 @@ F 3 "" H 5000 2200 60  0000 C CNN
 	1    5000 2200
 	1    0    0    -1  
 $EndComp
+Text Notes 6900 1650 0    50   ~ 0
+Each CONN_MALE will be jumped\nto an active-low magnetic relay
+$Comp
+L Relay_SolidState:FOD420 U?
+U 1 1 5F8B8DAE
+P 9400 1550
+F 0 "U?" H 9400 1875 50  0000 C CNN
+F 1 "FOD420" H 9400 1784 50  0000 C CNN
+F 2 "Package_DIP:DIP-6_W7.62mm" H 9200 1350 50  0001 L CIN
+F 3 "http://www.fairchildsemi.com/ds/FO/FOD4218.pdf" H 9400 1550 50  0001 L CNN
+	1    9400 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 2200 8700 1450
+Wire Wire Line
+	6900 2200 8700 2200
+$Comp
+L power:GND #PWR?
+U 1 1 5F8BC5BF
+P 9100 1650
+F 0 "#PWR?" H 9100 1400 50  0001 C CNN
+F 1 "GND" H 9105 1477 50  0000 C CNN
+F 2 "" H 9100 1650 50  0001 C CNN
+F 3 "" H 9100 1650 50  0001 C CNN
+	1    9100 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 1450 9100 1450
+$Comp
+L power:GND #PWR?
+U 1 1 5F8BDA28
+P 9700 1650
+F 0 "#PWR?" H 9700 1400 50  0001 C CNN
+F 1 "GND" H 9705 1477 50  0000 C CNN
+F 2 "" H 9700 1650 50  0001 C CNN
+F 3 "" H 9700 1650 50  0001 C CNN
+	1    9700 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x08_Male J?
+U 1 1 5F8C1D14
+P 10950 2900
+F 0 "J?" H 11058 3381 50  0000 C CNN
+F 1 "Conn_01x08_Male" H 11058 3290 50  0000 C CNN
+F 2 "" H 10950 2900 50  0001 C CNN
+F 3 "~" H 10950 2900 50  0001 C CNN
+	1    10950 2900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 1450 10350 2600
+Wire Wire Line
+	10350 2600 10750 2600
+$Comp
+L Device:D D?
+U 1 1 5F8C2E95
+P 9850 1650
+F 0 "D?" H 9850 1867 50  0000 C CNN
+F 1 "D" H 9850 1776 50  0000 C CNN
+F 2 "" H 9850 1650 50  0001 C CNN
+F 3 "~" H 9850 1650 50  0001 C CNN
+	1    9850 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+12V #PWR?
+U 1 1 5F8C4E97
+P 10000 1650
+F 0 "#PWR?" H 10000 1500 50  0001 C CNN
+F 1 "+12V" H 10015 1823 50  0000 C CNN
+F 2 "" H 10000 1650 50  0001 C CNN
+F 3 "" H 10000 1650 50  0001 C CNN
+	1    10000 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 1450 10350 1450
+Connection ~ 9700 1650
 $EndSCHEMATC
